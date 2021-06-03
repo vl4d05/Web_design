@@ -1,9 +1,6 @@
-import itemModelList from "./model/itemModelList.js";
-import itemViewList from "./view/itemViewList.js";
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
 
-import controller from "./controller/controller.js";
-
-const ItemModelList = new itemModelList();
-const ItemViewList = new itemViewList(ItemModelList);
-
-const Controller = new controller(ItemModelList, ItemViewList);
+createApp(App).use(store).use(router).mount("#app");
